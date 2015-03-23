@@ -11,7 +11,9 @@
     <tr ng-repeat="task in tasks">
       <td>{{task.name}}</td>
       <td>{{task.description}}</td>     
-      <td><a href="#/edit/{{task.id}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a></td>
+      <td><a href="#/edit/{{task.id}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
+          <button class="btn btn-danger" ng-click="del(tasks.indexOf(task), task.id)"><span class="glyphicon glyphicon-trash"></span></button>
+      </td>
     </tr>
   </tbody>
 </table>

@@ -12,8 +12,7 @@
       <input class="form-control" type="text" ng-model="task.description" value="{{task.description}}" />
     </div>
     
-    <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(task)" id="add-new-btn" ng-click="update(task)">Update <span class="glyphicon glyphicon-floppy-disk"></span></button>
-    <button class="btn btn-danger" ng-click="delete(task)">Delete <span class="glyphicon glyphicon-trash"></span></button>
+    <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(task)" id="add-new-btn" ng-click="update(task)">Update <span class="glyphicon glyphicon-floppy-disk"></span></button>   
     <a href="#/" class="btn">Cancel</a>
   </form>
 </div>

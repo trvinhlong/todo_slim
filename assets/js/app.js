@@ -7,10 +7,17 @@ angular.module('CrudApp', ['ngRoute']).
                         otherwise({redirectTo: '/'});
             }]);
 
-function ListCtrl($scope, $http) {
+function ListCtrl($scope, $http, $location) {
     $http.get('api/tasks').success(function (data) {
         $scope.tasks = data;
     });
+    $scope.del = function (index, id) {
+        var deleteTask = confirm('Are you sure you want to delete?');
+        if (deleteTask) {
+            $http.delete('api/tasks/' + id);
+        $scope.tasks.splice(index, 1);
+        }      
+   };    
 }
 
 function AddCtrl($scope, $http, $location) {
@@ -42,11 +49,11 @@ function EditCtrl($scope, $http, $location, $routeParams) {
             $scope.activePath = $location.path('/');
         });
     };
-    $scope.delete = function (task) {
-        var deleteTask = confirm('Are you absolutely sure you want to delete?');
-        if (deleteTask) {
-            $http.delete('api/tasks/' + task.id);
-            $scope.activePath = $location.path('/');
-        }
-    };
+//    $scope.delete = function (task) {
+//        var deleteTask = confirm('Are you absolutely sure you want to delete?');
+//        if (deleteTask) {
+//            $http.delete('api/tasks/' + task.id).success(function () {console.log(123)});
+//            $scope.activePath = $location.path('/');
+//        }
+//    };
 }
