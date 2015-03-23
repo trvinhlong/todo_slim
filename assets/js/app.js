@@ -49,11 +49,4 @@ function EditCtrl($scope, $http, $location, $routeParams) {
             $scope.activePath = $location.path('/');
         });
     };
-//    $scope.delete = function (task) {
-//        var deleteTask = confirm('Are you absolutely sure you want to delete?');
-//        if (deleteTask) {
-//            $http.delete('api/tasks/' + task.id).success(function () {console.log(123)});
-//            $scope.activePath = $location.path('/');
-//        }
-//    };
 }
