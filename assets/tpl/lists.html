@@ -1,0 +1,18 @@
+<h2>To do</h2>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>      
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="task in tasks">
+      <td>{{task.name}}</td>
+      <td>{{task.description}}</td>     
+      <td><a href="#/edit/{{task.id}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a></td>
+    </tr>
+  </tbody>
+</table>
+<a class="btn btn-primary" href="#/add">New Task</a>
